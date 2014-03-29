@@ -1,0 +1,42 @@
+/* ADD LATO FONT */
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic);
+
+*, h1,h2,h3,h4,h5,h6{
+	font-family: 'Lato','Helvetica Neue',Arial,sans-serif;
+	font-weight: 200;
+}
+	h1,h2,h3,h4,h5,h6{
+		font-weight: 300;
+	}
+
+	section{
+		font-size: 1.25em;
+	}
+
+/* VISIT SITE */
+button.btn-visit{
+	margin: auto;
+}
+
+/* POST CONTENT */
+.post_content .row{
+	padding-top: 2em;
+	padding-bottom: 2em;
+}
+
+.post_content .col-sm-6 img{
+	padding: 1em;
+}
+
+.post_content .row{
+	display: table;
+	border-bottom: thin solid #eee;
+}
+	.post_content .row:last-child{
+		border: 0;
+	}
+
+	.post_content .col-sm-6{
+		display: table-cell;
+		vertical-align: center;
+	}
