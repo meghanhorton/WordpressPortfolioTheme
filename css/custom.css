@@ -26,7 +26,23 @@ button.btn-visit{
 
 .post_content .col-sm-6 img{
 	padding: 1em;
+	width: 100%;
 }
+	#portfolio img{
+		background-image: -webkit-gradient(
+			linear,
+			left top,
+			left bottom,
+			color-stop(0, #EEEEEE),
+			color-stop(1, #F9F9F9)
+		);
+		background-image: -o-linear-gradient(bottom, #EEEEEE 0%, #F9F9F9 100%);
+		background-image: -moz-linear-gradient(bottom, #EEEEEE 0%, #F9F9F9 100%);
+		background-image: -webkit-linear-gradient(bottom, #EEEEEE 0%, #F9F9F9 100%);
+		background-image: -ms-linear-gradient(bottom, #EEEEEE 0%, #F9F9F9 100%);
+		background-image: linear-gradient(to bottom, #EEEEEE 0%, #F9F9F9 100%);
+		display: block;
+	}
 
 .post_content .row{
 	display: table;

@@ -23,15 +23,18 @@ function create_post_type() {
 	);
 }
 
-add_filter( 'pre_get_posts', 'my_get_posts' );
+add_image_size( 'portfolio-small', 300, 200, true );
+add_image_size( 'portfolio-large', 600, 400, true );
 
-function my_get_posts( $query ) {
+// add_filter( 'pre_get_posts', 'my_get_posts' );
 
-	if ( is_home() && $query->is_main_query() )
-		$query->set( 'post_type', array( 'post', 'page', 'portfolio' ) );
+// function my_get_posts( $query ) {
 
-	return $query;
-}
+// 	if ( is_home() && $query->is_main_query() )
+// 		$query->set( 'post_type', array( 'post', 'page', 'portfolio' ) );
+
+// 	return $query;
+// }
 
 // DEFINE CUSTOM FUNCTIONS
 function gallery_portfolio($attr) {
@@ -88,7 +91,7 @@ function gallery_portfolio($attr) {
 function add_scripts() {
 	// ADD CAROUSEL FUNCTIONALITY
 	wp_enqueue_script(
-		'jquery-carousel',
+		'custom',
 		get_stylesheet_directory_uri() . '/js/custom.js',
 		array( 'jquery' )
 	);
