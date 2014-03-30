@@ -1,11 +1,16 @@
 /* ADD LATO FONT */
 @import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic);
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,100,700);
 
+body{
+	background: #f4f4ef;
+}
 *, h1,h2,h3,h4,h5,h6{
 	font-family: 'Lato','Helvetica Neue',Arial,sans-serif;
 	font-weight: 200;
 }
 	h1,h2,h3,h4,h5,h6{
+		font-family: 'Roboto Slab',serif;
 		font-weight: 300;
 	}
 
@@ -13,9 +18,21 @@
 		font-size: 1.25em;
 	}
 
+	@media (min-width: 1200px){
+		.container{
+			width: 950px;
+		}
+	}
+
 /* VISIT SITE */
-button.btn-visit{
+.btn-visit, .btn-visit:hover{
+	background: #F06060;
+	border: thin solid #ec3131;
 	margin: auto;
+}
+
+.center{
+	text-align: center;
 }
 
 /* POST CONTENT */
@@ -29,30 +46,74 @@ button.btn-visit{
 	width: 100%;
 }
 	#portfolio img{
-		background-image: -webkit-gradient(
-			linear,
-			left top,
-			left bottom,
-			color-stop(0, #EEEEEE),
-			color-stop(1, #F9F9F9)
-		);
-		background-image: -o-linear-gradient(bottom, #EEEEEE 0%, #F9F9F9 100%);
-		background-image: -moz-linear-gradient(bottom, #EEEEEE 0%, #F9F9F9 100%);
-		background-image: -webkit-linear-gradient(bottom, #EEEEEE 0%, #F9F9F9 100%);
-		background-image: -ms-linear-gradient(bottom, #EEEEEE 0%, #F9F9F9 100%);
-		background-image: linear-gradient(to bottom, #EEEEEE 0%, #F9F9F9 100%);
 		display: block;
+		width: 100%;
+		height: auto;
 	}
 
+	.portfolio{
+		position: relative;
+	}
+
+	.portfolio-overlay{
+		height: 100%;
+		background: rgba(240,96,96,0.9);
+		position: absolute;
+		top: 0;
+		display: none;
+		padding: 15% 2em 0 2em;
+		overflow: hidden;
+	}
+			a.portfolio-overlay,
+			a.portfolio-overlay:hover,
+			a.portfolio-overlay:visited{
+				font-family: 'Roboto Slab','Garamond',serif;
+				font-size: 1.25em;
+				font-weight: normal;
+				text-decoration: none;
+				font-style: normal;
+				color: #fff;
+				text-align: center;
+			}
+
+			.portfolioitem img{
+				width: 100%;
+			}
+
+			.view-project{
+				display: block;
+				font-weight: 300;
+				width: 50%;
+				margin: auto;
+				margin-top: 1em;
+				border: thin solid #f7a6a6;
+				color: #fff;
+				padding: 1em;
+				font-size: 0.5em;
+				-webkit-border-radius: 10px;
+				-moz-border-radius: 10px;
+				border-radius: 10px;
+				text-transform: uppercase;
+				background: rgba(255,255,255,0.25);
+			}
+.tags{
+	margin-bottom: 1em;
+}
+	.tags>a{
+		background: rgba(240,96,96,0.5);
+		border: 1px solid #ed3131;
+		color: #ed3131;
+		font-size: 100;
+		font-family: 'Roboto Slab',serif;
+	}
+		.tags>a:hover, .tags>a:visited{
+			background-color: #ed3131;
+		}
+			
+
 .post_content .row{
-	display: table;
 	border-bottom: thin solid #eee;
 }
 	.post_content .row:last-child{
 		border: 0;
-	}
-
-	.post_content .col-sm-6{
-		display: table-cell;
-		vertical-align: center;
 	}

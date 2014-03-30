@@ -1,14 +1,16 @@
 jQuery(document).ready( 
 	function(){
-		jQuery('.portfolioitem').hover(
-			function(){
-				jQuery(this).parent('section').prepend('<div class="portfolio-overlay">Test</div>');
-			}
-		);
-		jQuery('.portfolioitem').mouseout(
-			function(){
-				jQuery('.portfolio-overlay').remove();
-			}
-		);
+		var imagewidth = jQuery('.portfolioitem img').width();
+    	jQuery('.portfolio-overlay').css('width',imagewidth);
+    	console.log(imagewidth);
+
+		jQuery('.portfolio').hover( function() {
+        	jQuery(this).find('.portfolio-overlay').fadeIn(300);
+
+    	}, function() {
+        	jQuery(this).find('.portfolio-overlay').fadeOut(100);
+    	});
+
+    	
 	}
 );
