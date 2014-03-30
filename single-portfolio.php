@@ -15,7 +15,7 @@
 					
 						<section class="post_content row clearfix" itemprop="articleBody">
 							<div class="col-sm-12">
-								<?php the_tags('<p class="tags"><span class="tags-title"></span> ', ' ', '</p>'); ?>
+								<?php the_tags('<p class="tags">', ' ', '</p>'); ?>
 								<?php echo strip_shortcodes($post->post_content); ?>
 								
 								<?php wp_link_pages(); ?>
