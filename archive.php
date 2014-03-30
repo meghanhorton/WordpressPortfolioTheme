@@ -5,35 +5,35 @@
 				
 					<div class="page-header">
 					<?php if (is_category()) { ?>
-						<h1 class="archive_title h2">
+						<h1>
 							<span><?php _e("Posts Categorized:", "wpbootstrap"); ?></span> <?php single_cat_title(); ?>
 						</h1>
 					<?php } elseif (is_tag()) { ?> 
-						<h1 class="archive_title h2">
-							<span><?php _e("Posts Tagged:", "wpbootstrap"); ?></span> <?php single_tag_title(); ?>
+						<h1>
+							<?php single_tag_title(); ?>
 						</h1>
 					<?php } elseif (is_author()) { ?>
-						<h1 class="archive_title h2">
-							<span><?php _e("Posts By:", "wpbootstrap"); ?></span> <?php get_the_author_meta('display_name'); ?>
+						<h1>
+							<?php _e("Posts By:", "wpbootstrap"); ?> <?php get_the_author_meta('display_name'); ?>
 						</h1>
 					<?php } elseif (is_day()) { ?>
-						<h1 class="archive_title h2">
-							<span><?php _e("Daily Archives:", "wpbootstrap"); ?></span> <?php the_time('l, F j, Y'); ?>
+						<h1>
+							<?php _e("Daily Archives:", "wpbootstrap"); ?> <?php the_time('l, F j, Y'); ?>
 						</h1>
 					<?php } elseif (is_month()) { ?>
-					    <h1 class="archive_title h2">
-					    	<span><?php _e("Monthly Archives:", "wpbootstrap"); ?>:</span> <?php the_time('F Y'); ?>
+					    <h1>
+					    	<?php _e("Monthly Archives:", "wpbootstrap"); ?>: <?php the_time('F Y'); ?>
 					    </h1>
 					<?php } elseif (is_year()) { ?>
-					    <h1 class="archive_title h2">
-					    	<span><?php _e("Yearly Archives:", "wpbootstrap"); ?>:</span> <?php the_time('Y'); ?>
+					    <h1>
+					    	<?php _e("Yearly Archives:", "wpbootstrap"); ?>: <?php the_time('Y'); ?>
 					    </h1>
 					<?php } ?>
 					</div>
 
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					
-					<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
+					<!-- <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article"> -->
 						
 						<!-- <header>
 							
@@ -43,9 +43,13 @@
 						
 						</header> <!-- end article header --> 
 					
-						<section class="portfolio col-sm-4">
+						<section class="portfolio col-sm-6">
 							<a class="portfolioitem" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
 							<?php the_post_thumbnail( 'portfolio-large' ); ?>
+							</a>
+							<a id="overlay-<?php the_ID(); ?>" class="portfolio-overlay" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+								<?php the_title(); ?>
+								<span class="view-project">View Project</span>
 							</a>
 						
 							<?php //the_excerpt(); ?>					
@@ -55,7 +59,7 @@
 							
 						</footer> <!-- end article footer -->
 					
-					</article> <!-- end article -->
+					<!-- </article> end article -->
 					
 					<?php endwhile; ?>	
 					
