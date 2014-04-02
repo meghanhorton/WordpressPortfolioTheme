@@ -4,7 +4,7 @@
 				<div id="main" class="clearfix" role="main">
 
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-					
+
 					<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 						
 						<header>
@@ -16,7 +16,7 @@
 						<section class="post_content row clearfix" itemprop="articleBody">
 							<div class="col-sm-12">
 								<?php the_tags('<p class="tags">', ' ', '</p>'); ?>
-								<?php echo strip_shortcodes($post->post_content); ?>
+								<?php the_content(); ?>
 								
 								<?php wp_link_pages(); ?>
 							</div>
@@ -38,7 +38,7 @@
 					
 					</article> <!-- end article -->
 					
-					<?php comments_template('',true); ?>
+					<?php //comments_template('',true); ?>
 					
 					<?php endwhile; ?>			
 					
