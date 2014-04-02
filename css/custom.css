@@ -20,7 +20,7 @@ body{
 
 	@media (min-width: 1200px){
 		.container{
-			width: 950px;
+			width: 900px;
 		}
 	}
 
@@ -29,11 +29,65 @@ body{
 	background: #F06060;
 	border: thin solid #ec3131;
 	margin: auto;
+	margin-top: 2em;
 }
 
 .center{
 	text-align: center;
 }
+
+/* NAVBAR */
+header *{
+	font-family: 'Roboto Slab',serif;
+}
+.navbar{
+	background: #8CBEB2;
+	color: #f4f4ef;
+}
+	.navbar-default{
+		border-bottom: thin solid #6bac9c!important;
+	}
+		.navbar-default .navbar-nav > li > a{
+			color: #376156;
+		}
+
+		.navbar-nav > li > .dropdown-menu{
+			background: #f4f4ef;
+			border: thin solid #6bac9c;
+		}
+			.navbar-nav > li > .dropdown-menu > li > a {
+				color: #376156;
+			}
+
+		.navbar-default .navbar-nav > .active > a{
+			background: #6bac9c;
+			color: #376156;
+		}
+			.navbar-default .navbar-nav > .active > a:hover{
+				background: #376156;
+				color: #6bac9c;
+			}
+
+		.navbar-default .navbar-brand{
+			color: #f4f4ef;
+			font-weight: 300;
+			font-family: 'Roboto Slab',serif;
+		}
+			.navbar-default .navbar-brand:hover{
+				color: #6bac9c;
+			}
+
+		.navbar-default .form-control {
+			background: #cde3de;
+			border: thin solid #6bac9c;
+			color: #8cbeb2;
+		}
+			.navbar-default::-webkit-input-placeholder,
+			.navbar-default::-moz-placeholder,
+			.navbar-default:-ms-input-placeholder,
+			.navbar-default input:-moz-placeholder{
+				color: #8cbeb2;
+			}
 
 /* POST CONTENT */
 .post_content .row{
@@ -57,7 +111,7 @@ body{
 
 	.portfolio-overlay{
 		height: 100%;
-		background: rgba(240,96,96,0.9);
+		background: rgba(240,96,96,0.7);
 		position: absolute;
 		top: 0;
 		display: none;
@@ -100,14 +154,14 @@ body{
 	margin-bottom: 1em;
 }
 	.tags>a{
-		background: rgba(240,96,96,0.5);
-		border: 1px solid #ed3131;
-		color: #ed3131;
+		background: transparent;
+		border: 1px solid #f7a6a6;
+		color: #f7a6a6;
 		font-size: 100;
 		font-family: 'Roboto Slab',serif;
 	}
 		.tags>a:hover, .tags>a:visited{
-			background-color: #ed3131;
+			background: transparent;
 		}
 			
 
