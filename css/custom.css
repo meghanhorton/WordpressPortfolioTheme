@@ -5,10 +5,21 @@
 body{
 	background: #f4f4ef;
 }
-*, h1,h2,h3,h4,h5,h6{
+
+*{
 	font-family: 'Lato','Helvetica Neue',Arial,sans-serif;
 	font-weight: 200;
 }
+	blockquote,
+	blockquote>p, 
+	blockquote>p>b{
+	font-family: 'Roboto Slab',serif!important;
+	border: 0;
+	}
+		blockquote>p{
+			font-size: 1.25em;
+		}
+
 	h1,h2,h3,h4,h5,h6{
 		font-family: 'Roboto Slab',serif;
 		font-weight: 300;
@@ -30,7 +41,10 @@ body{
 	border: thin solid #ec3131;
 	margin: auto;
 	margin-top: 2em;
+	font-family: 'Roboto Slab',serif;
 }
+
+
 
 .center{
 	text-align: center;

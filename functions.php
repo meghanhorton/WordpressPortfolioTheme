@@ -23,6 +23,7 @@ function create_post_type() {
 	);
 }
 
+// ALLOW CUSTOM POST TYPES ON ARCHIVE PAGES
 function namespace_add_custom_types( $query ) {
   if( is_category() || is_tag() && empty( $query->query_vars['suppress_filters'] ) ) {
     $query->set( 'post_type', array(
@@ -34,71 +35,12 @@ function namespace_add_custom_types( $query ) {
 add_filter( 'pre_get_posts', 'namespace_add_custom_types' );
 
 
+// SET THUMBNAIL SIZES
 add_image_size( 'portfolio-small', 300, 200, true );
 add_image_size( 'portfolio-large', 600, 400, true );
 
-// add_filter( 'pre_get_posts', 'my_get_posts' );
 
-// function my_get_posts( $query ) {
-
-// 	if ( is_home() && $query->is_main_query() )
-// 		$query->set( 'post_type', array( 'post', 'page', 'portfolio' ) );
-
-// 	return $query;
-// }
-
-// DEFINE CUSTOM FUNCTIONS
-// function gallery_portfolio($attr) {
-// 	global $post, $wp_locale;
-
-// 	$output = "";
-
-// 	$args = array( 'post_type' => 'attachment', 'numberposts' => -1, 'post_status' => null, 'post_parent' => $post->ID ); 
-// 	$attachments = get_posts($args);
-// 	if ($attachments) {
-// 		$count = count($attachments) - 1;
-// 		$output = 
-// 		'<div id="gallery">
-// 			<div id="carousel-portfolio" class="carousel slide" data-ride="carousel">';
-// 		// INDICATORS
-// 		$output .= '<ol class="carousel-indicators">';
-// 		for ($i = 0; $i <= $count; $i++) {
-// 			if($i == 0){$active = ' class="active"';} else{unset($active);}
-// 		    $output .= '<li data-target="#carousel-portfolio" data-slide-to="'.$i.'" '.$active.'></li>';
-// 		}
-// 		$output .= '</ol>';
-// 		$output .= '<div class="carousel-inner">';
-
-
-// 		$i = 0;
-// 		foreach ( $attachments as $attachment ) {
-// 			if($i == 0){$active = 'active';} else{unset($active);}
-// 			$output .= '<div class="item '.$active.'">';
-// 			$att_title = apply_filters( 'the_title' , $attachment->post_title );
-// 			$output .= wp_get_attachment_image( $attachment->ID , 'full');
-// 			$output .= '<div class="carousel-caption">';
-// 			$output .= '<h3>'.$attachment->post_title.'</h3>';
-// 			$output .= '<h4>'.$attachment->post_content.'</h4>';
-// 			$output .= '</div>';
-// 			$output .= '</div>';
-// 			$i++;
-// 		}
-// 		$output .= '</div>';
-// 		$output .= '
-// 			<a class="left carousel-control" href="#carousel-portfolio" data-slide="prev">
-// 				    <span class="glyphicon glyphicon-chevron-left"></span>
-// 				  </a>
-// 				  <a class="right carousel-control" href="#carousel-portfolio" data-slide="next">
-// 				    <span class="glyphicon glyphicon-chevron-right"></span>
-// 				  </a>
-// 			</div>
-
-// 		</div>';
-// 	}
-
-// 	return $output;
-// }
-
+// ADD CUSTOM JAVASCRIPT
 function add_scripts() {
 	// ADD CAROUSEL FUNCTIONALITY
 	wp_enqueue_script(
