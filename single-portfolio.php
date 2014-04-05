@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+		<div class="container">
 			<div id="content" class="clearfix row">
 			
 				<div id="main" class="clearfix" role="main">
@@ -15,7 +16,7 @@
 					
 						<section class="post_content row clearfix" itemprop="articleBody">
 							<div class="col-sm-12">
-								<?php the_tags('<p class="tags">', ' ', '</p>'); ?>
+								<?php the_terms( get_the_ID(), 'portfolio_skills', '<p class="tags">', ' ', '</p>'); ?>
 								<?php the_content(); ?>
 								
 								<?php wp_link_pages(); ?>
@@ -60,5 +61,6 @@
 				</div> <!-- end #main -->
         
 			</div> <!-- end #content -->
+		</div> <!-- end .container -->
 
 <?php get_footer(); ?>

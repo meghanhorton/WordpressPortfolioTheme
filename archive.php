@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+		<div class="container">
 			<div id="portfolio" class="clearfix row">
 			
 				<div id="main" class="col-sm-12 clearfix" role="main">
@@ -85,5 +86,6 @@
 				</div> <!-- end #main -->
         
 			</div> <!-- end #content -->
+		</div> <!-- end .container -->
 
 <?php get_footer(); ?>
